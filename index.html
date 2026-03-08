@@ -1,98 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medical Emergency Card</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#c0392b">
+  <title>🆘 Placa Médica — José Rafael Gómez</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
-<div class="card">
+  <!-- BARRA SOS FIJA ARRIBA -->
+  <div class="sos-bar">
+    <div class="sos-inner">
+      <div class="sos-left">
+        <span class="sos-pulse"></span>
+        <span id="sos_text">🆘 INFORMACIÓN MÉDICA DE EMERGENCIA</span>
+      </div>
+      <div class="lang-btns">
+        <button class="lang-btn active" onclick="setLanguage('es')" id="btn_es">ES</button>
+        <button class="lang-btn" onclick="setLanguage('en')" id="btn_en">EN</button>
+      </div>
+    </div>
+  </div>
 
-<div class="alerta" id="alerta">
-⚠️ ALÉRGICO A LOS AINES
-</div>
+  <div class="page">
+    <div class="card">
 
-<div class="perfil">
+      <!-- BANNER ALERGIA -->
+      <div class="alert-banner">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span id="alerta_text">ALÉRGICO A LOS AINEs — NO ADMINISTRAR</span>
+      </div>
 
-<img src="Imagen12.png" alt="Perfil">
+      <!-- PERFIL -->
+      <div class="profile-section">
+        <div class="photo-wrap">
+          <img src="Imagen12.png" alt="Foto"
+               class="profile-photo"
+               onerror="this.style.display='none';document.getElementById('photo_fallback').style.display='flex'">
+          <div class="photo-fallback" id="photo_fallback">
+            <i class="fa-solid fa-user-injured"></i>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h1 class="patient-name">José Rafael<br>Gómez Robles</h1>
+          <div class="blood-badge">
+            <i class="fa-solid fa-droplet"></i>
+            <span id="blood_label_card">TIPO</span>
+            <strong>B+</strong>
+          </div>
+        </div>
+      </div>
 
-<h1>José Rafael Gómez Robles</h1>
+      <!-- DATOS PERSONALES -->
+      <div class="section">
+        <div class="section-title">
+          <i class="fa-solid fa-circle-user"></i>
+          <span id="sec_personal">Datos Personales</span>
+        </div>
+        <div class="info-grid">
 
-<div class="blood">
-🩸 B+
-</div>
+          <div class="info-item">
+            <span class="info-icon"><i class="fa-solid fa-cake-candles"></i></span>
+            <div class="info-content">
+              <span class="info-label" id="birth_label">Fecha de nacimiento</span>
+              <span class="info-val">05 / Dic / 1992</span>
+            </div>
+          </div>
 
-</div>
+          <div class="info-item">
+            <span class="info-icon"><i class="fa-solid fa-hourglass-half"></i></span>
+            <div class="info-content">
+              <span class="info-label" id="age_label">Edad</span>
+              <span class="info-val">
+                <span id="edad"></span> <span id="years_label">años</span>
+              </span>
+            </div>
+          </div>
 
-<div class="info">
+          <div class="info-item">
+            <span class="info-icon"><i class="fa-solid fa-id-card"></i></span>
+            <div class="info-content">
+              <span class="info-label" id="id_label">Cédula</span>
+              <span class="info-val">1.083.459.688</span>
+            </div>
+          </div>
 
-<p><i class="fa-solid fa-cake-candles"></i>
-<span id="birth_label">Fecha nacimiento:</span>
-05/12/1992
-</p>
+          <div class="info-item">
+            <span class="info-icon"><i class="fa-solid fa-flag"></i></span>
+            <div class="info-content">
+              <span class="info-label" id="nat_label">Nacionalidad</span>
+              <span class="info-val">Colombiano</span>
+            </div>
+          </div>
 
-<p><i class="fa-solid fa-user"></i>
-<span id="age_label">Edad: 33 años</span>
-<span id="edad"></span>
-</p>
+          <div class="info-item">
+            <span class="info-icon"><i class="fa-solid fa-building-shield"></i></span>
+            <div class="info-content">
+              <span class="info-label" id="eps_label">EPS / Seguro</span>
+              <span class="info-val">Salud Total</span>
+            </div>
+          </div>
 
-<p><i class="fa-solid fa-id-card"></i>
-<span id="id_label">Cédula:</span>
-1083459688
-</p>
+          <div class="info-item">
+            <span class="info-icon"><i class="fa-solid fa-stethoscope"></i></span>
+            <div class="info-content">
+              <span class="info-label" id="doc_label">Médico tratante</span>
+              <span class="info-val">No suministrado · Clínica del Norte</span>
+            </div>
+          </div>
 
-<p><i class="fa-solid fa-flag"></i>
-<span id="nat_label">Nacionalidad:</span>
-Colombiano
-</p>
+        </div>
+      </div>
 
-<p><i class="fa-solid fa-hospital"></i>
-EPS: SALUD TOTAL
-</p>
+      <!-- CONDICIONES MÉDICAS -->
+      <div class="section">
+        <div class="section-title title-red">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span id="sec_conditions">Condiciones Médicas</span>
+        </div>
+        <div class="tags-wrap">
+          <span class="tag tag-red" id="tag_aines">⚠ AINEs</span>
+          <span class="tag tag-orange">NO Hipertensión arterial</span>
+          <span class="tag tag-orange">NO Diabetes</span>
+        </div>
+      </div>
 
-</div>
+      <!-- MEDICAMENTOS -->
+      <div class="section">
+        <div class="section-title title-blue">
+          <i class="fa-solid fa-pills"></i>
+          <span id="sec_meds">Medicamentos Actuales</span>
+        </div>
+        <div class="tags-wrap">
+          <span class="tag tag-blue">Ocasional Loratadina 10mg</span>
+          <span class="tag tag-blue">Ocasional Desloratadina 10mg</span>
+          <span class="tag tag-blue">Ocasional Cetiricina 10mg</span>
+        </div>
+      </div>
 
-<hr>
+      <!-- NOTAS MÉDICAS -->
+      <div class="section">
+        <div class="section-title title-yellow">
+          <i class="fa-solid fa-notes-medical"></i>
+          <span id="sec_notes">Notas para el Médico</span>
+        </div>
+        <p class="notes-text" id="notes_text">
+          Paciente alérgico a AINEs (ibuprofeno, diclofenaco).
+          Evitar AINEs y corticoides sin evaluación previa..
+        </p>
+      </div>
 
-<div class="emergency">
+      <div class="divider"></div>
 
-<h2 id="contact_label">Contacto de Emergencia</h2>
+      <!-- CONTACTO EMERGENCIA -->
+      <div class="section">
+        <div class="section-title title-green">
+          <i class="fa-solid fa-phone-volume"></i>
+          <span id="sec_contact">Contacto de Emergencia</span>
+        </div>
+        <div class="contact-name">
+          <i class="fa-solid fa-user-nurse"></i>
+          Laura Torregrosa
+          <span class="relation" id="relation_text">(Esposa)</span>
+        </div>
+        <div class="action-btns">
+          <a href="tel:+573012344124" class="btn-action btn-call">
+            <i class="fa-solid fa-phone"></i>
+            <span id="call_label">Llamar</span>
+          </a>
+          <a href="https://wa.me/573012344124" target="_blank" class="btn-action btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+          <button class="btn-action btn-location" onclick="sendLocation()" id="loc_btn">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="loc_label">Ubicación</span>
+          </button>
+        </div>
+      </div>
 
-<p>LAURA TORREGROSA</p>
+      <!-- BOTÓN EMERGENCIAS 123 -->
+      <a href="tel:123" class="btn-sos-call">
+        <i class="fa-solid fa-phone-flip"></i>
+        <span id="emergency_call_label">LLAMAR EMERGENCIAS — 123</span>
+      </a>
 
-<div class="buttons">
+    </div><!-- /card -->
 
-<a href="tel:+573012344124" class="call">
-<i class="fa-solid fa-phone"></i> Llamar
-</a>
+    <div class="footer">
+      <span id="footer_text">Placa Médica de Emergencia · QR</span>
+      &nbsp;·&nbsp;
+      <span>ID: MQ-JOSE-A3F2</span>
+    </div>
 
-<button class="location" onclick="sendLocation()">
-<i class="fa-solid fa-location-dot"></i> Enviar Ubicación
-</button>
+  </div><!-- /page -->
 
-</div>
-
-</div>
-
-<div class="language">
-
-<button onclick="setLanguage('es')">ES</button>
-<button onclick="setLanguage('en')">EN</button>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
