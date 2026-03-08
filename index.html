@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Emergency Card</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="alerta" id="alerta">
+⚠️ ALÉRGICO A LOS AINES
+</div>
+
+<div class="perfil">
+
+<img src="Imagen12.png" alt="Perfil">
+
+<h1>José Rafael Gómez Robles</h1>
+
+<div class="blood">
+🩸 B+
+</div>
+
+</div>
+
+<div class="info">
+
+<p><i class="fa-solid fa-cake-candles"></i>
+<span id="birth_label">Fecha nacimiento:</span>
+05/12/1992
+</p>
+
+<p><i class="fa-solid fa-user"></i>
+<span id="age_label">Edad:</span>
+<span id="edad"></span>
+</p>
+
+<p><i class="fa-solid fa-id-card"></i>
+<span id="id_label">Cédula:</span>
+1083459688
+</p>
+
+<p><i class="fa-solid fa-flag"></i>
+<span id="nat_label">Nacionalidad:</span>
+Colombiano
+</p>
+
+<p><i class="fa-solid fa-hospital"></i>
+EPS: SALUD TOTAL
+</p>
+
+</div>
+
+<hr>
+
+<div class="emergency">
+
+<h2 id="contact_label">Contacto de Emergencia</h2>
+
+<p>LAURA TORREGROSA</p>
+
+<div class="buttons">
+
+<a href="tel:+573012344124" class="call">
+<i class="fa-solid fa-phone"></i> Llamar
+</a>
+
+<button class="location" onclick="sendLocation()">
+<i class="fa-solid fa-location-dot"></i> Enviar Ubicación
+</button>
+
+</div>
+
+</div>
+
+<div class="language">
+
+<button onclick="setLanguage('es')">ES</button>
+<button onclick="setLanguage('en')">EN</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
